@@ -6,8 +6,8 @@ def normalize_phone(phone_number):
     formatted_number = re.sub(r"[^\d+]", "", phone_number)
 
     # Якщо номер не починається з "+", додаємо код країни +38
-    if not formatted_number[0] == "+":
-        if formatted_number[0-2] == "380":
+    if not formatted_number.find("+") == 0:
+        if formatted_number.find("380") == 0:
             # Якщо номер починається з "380", додаємо лише "+"
             formatted_number = "+" + formatted_number
         else:
