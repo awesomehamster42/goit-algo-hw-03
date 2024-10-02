@@ -2,9 +2,14 @@ import random
 
 
 def get_numbers_ticket(min, max, quantity):
+    
+    # Перевіряємо, чи вірні передані значення
+    if not (1 <= min < max <= 1000):
 
-    # Перевірка на відповідність умовам
-    if min >= 1 and max <= 1000:
+        # Повертаємо пустий список чисел, якщо умови не виконуються
+        return []
+    
+    else:
 
         # Створюємо список чисел від min до max
         numbers = list(range(min, max+1))
@@ -13,12 +18,4 @@ def get_numbers_ticket(min, max, quantity):
         chosen_numbers = random.sample(numbers, quantity)
 
         # Повертаємо відсортований список чисел
-        return sorted(chosen_numbers)
-    else:
-
-        # Повертаємо пустий список чисел, якщо умови не виконуються
-        return []
-    
-
-lottery_numbers = get_numbers_ticket(1, 49, 6)
-print("Ваші лотерейні числа:", lottery_numbers)
+        return sorted(chosen_numbers) 
