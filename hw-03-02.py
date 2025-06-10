@@ -4,10 +4,11 @@ import random
 def get_numbers_ticket(min, max, quantity):
     
     # Перевіряємо, чи вірні передані значення
-    if not (1 <= min < max <= 1000):
+    if not (1 <= min < max <= 1000) or quantity > (max - min + 1):
 
         # Повертаємо пустий список чисел, якщо умови не виконуються
         return []
+    
     
     else:
 
